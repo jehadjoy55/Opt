@@ -11,24 +11,28 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            background: url('https://jehadjoy55.github.io/flower2/') no-repeat center center fixed;
-            background-size: cover;
+        /* Full-screen iframe for background */
+        .background-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1;
         }
+        /* Overlay to improve readability */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
             backdrop-filter: blur(10px);
+            z-index: 0;
         }
+        /* Poem container */
         .poem-container {
             position: relative;
             z-index: 1;
@@ -44,6 +48,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+        /* Scrollbar styling */
         .poem-container::-webkit-scrollbar {
             width: 5px;
         }
@@ -51,59 +56,82 @@
             background: rgba(255, 255, 255, 0.5);
             border-radius: 10px;
         }
+        /* Title styling */
         h1 {
             text-align: center;
             font-size: 24px;
             margin-bottom: 15px;
             font-weight: bold;
         }
+        /* Poem text styling */
         p {
             font-size: 18px;
             line-height: 1.8;
             text-align: justify;
         }
+        /* Centering content */
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Background iframe -->
+    <iframe class="background-iframe" src="https://jehadjoy55.github.io/flower2/"></iframe>
+    
+    <!-- Dark overlay for readability -->
     <div class="overlay"></div>
-    <div class="poem-container">
-        <h1>দূরত্বের আগুন</h1>
-        <p>
-            হাজার মাইলের ব্যবধান,  
-            তবু তোমার স্পর্শের অনুভব,  
-            স্ক্রিনের ওপাশে জমে থাকা শ্বাস,  
-            আমার ত্বকের গভীরে পোড়ে রব।  
-            <br><br>
-            তোমার কণ্ঠের নরম স্পর্শ,  
-            রাতের নিস্তব্ধতায় ছুঁয়ে যায়,  
-            ভিডিওর পর্দায় আঁকা আকাঙ্ক্ষা,  
-            দুই দেহের মাঝখানে ঝরে যায়।  
-            <br><br>
-            আমি আঙুল ছুঁই স্ক্রিনের কাঁচে,  
-            তোমার ত্বকের উষ্ণতা খুঁজি,  
-            তুমিও কি ঠিক তেমনই কাঁপো?  
-            আমার শ্বাসের ওমে মিশে বুঝি?  
-            <br><br>
-            বালিশে মুখ গুঁজে নিঃশ্বাস টানি,  
-            তোমার গন্ধ যেন এসে লাগে,  
-            মনে হয়, দূরত্ব কেবলই সংখ্যা,  
-            তৃষ্ণার দাবী কিছুতেই ভাগে না।  
-            <br><br>
-            রাত গভীর হলে বার্তা আসে,  
-            "তোমার শরীরটা কেমন আজ?"  
-            আমার বুকের ঢেউয়ে বয়ে যায়,  
-            তোমার শব্দের আদুরে সাজ।  
-            <br><br>
-            আকাশের চাঁদ, তারার আলো,  
-            দুটো শরীর, এক দহন,  
-            আঙুলের টানে বার্তা লিখি,  
-            "তোমার ছোঁয়া চাই এই ক্ষণ!"  
-            <br><br>
-            তুমি পর্দার ওপাশে কাঁপো,  
-            আমিও নিঃশ্বাসে জড়াই তোমায়,  
-            হয়তো বাস্তবে নেই একে অন্যকে,  
-            তবু পর্দার ওমে একসাথে পুড়াই।  
-        </p>
+    
+    <!-- Poem container -->
+    <div class="content-wrapper">
+        <div class="poem-container">
+            <h1>দূরত্বের আগুন</h1>
+            <p>
+                হাজার মাইলের ব্যবধান,  
+                তবু তোমার স্পর্শের অনুভব,  
+                স্ক্রিনের ওপাশে জমে থাকা শ্বাস,  
+                আমার ত্বকের গভীরে পোড়ে রব।  
+                <br><br>
+                তোমার কণ্ঠের নরম স্পর্শ,  
+                রাতের নিস্তব্ধতায় ছুঁয়ে যায়,  
+                ভিডিওর পর্দায় আঁকা আকাঙ্ক্ষা,  
+                দুই দেহের মাঝখানে ঝরে যায়।  
+                <br><br>
+                আমি আঙুল ছুঁই স্ক্রিনের কাঁচে,  
+                তোমার ত্বকের উষ্ণতা খুঁজি,  
+                তুমিও কি ঠিক তেমনই কাঁপো?  
+                আমার শ্বাসের ওমে মিশে বুঝি?  
+                <br><br>
+                বালিশে মুখ গুঁজে নিঃশ্বাস টানি,  
+                তোমার গন্ধ যেন এসে লাগে,  
+                মনে হয়, দূরত্ব কেবলই সংখ্যা,  
+                তৃষ্ণার দাবী কিছুতেই ভাগে না।  
+                <br><br>
+                রাত গভীর হলে বার্তা আসে,  
+                "তোমার শরীরটা কেমন আজ?"  
+                আমার বুকের ঢেউয়ে বয়ে যায়,  
+                তোমার শব্দের আদুরে সাজ।  
+                <br><br>
+                আকাশের চাঁদ, তারার আলো,  
+                দুটো শরীর, এক দহন,  
+                আঙুলের টানে বার্তা লিখি,  
+                "তোমার ছোঁয়া চাই এই ক্ষণ!"  
+                <br><br>
+                তুমি পর্দার ওপাশে কাঁপো,  
+                আমিও নিঃশ্বাসে জড়াই তোমায়,  
+                হয়তো বাস্তবে নেই একে অন্যকে,  
+                তবু পর্দার ওমে একসাথে পুড়াই।  
+            </p>
+        </div>
     </div>
+
 </body>
 </html>
